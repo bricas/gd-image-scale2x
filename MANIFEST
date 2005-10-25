@@ -1,0 +1,14 @@
+bin/scale2x
+Changes
+lib/GD/Image/Scale2x.pm
+Makefile.PL
+MANIFEST
+README
+t/01-use.t
+t/10-scale.t
+t/98-pod_coverage.t
+t/99-pod.t
+t/mslug2-1.png
+t/mslug2-2.png
+t/mslug2-3.png
+t/mslug2-4.png
