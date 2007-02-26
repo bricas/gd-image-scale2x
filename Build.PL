@@ -8,6 +8,7 @@ my $build = Module::Build->new(
     license            => 'perl',
     create_readme      => 1,
     create_makefile_pl => 'traditional',
+    script_files       => [ qw( bin/scale2x ) ],
     requires           => {
         'GD' => 0
     },
