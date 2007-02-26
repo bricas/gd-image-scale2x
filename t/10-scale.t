@@ -6,7 +6,7 @@ use strict;
 use warnings;
 
 BEGIN {
-	use_ok( 'GD::Image::Scale2x' );
+    use_ok( 'GD::Image::Scale2x' );
 }
 
 my $image1x = GD::Image->new( 't/mslug2-1.png' );

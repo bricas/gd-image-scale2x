@@ -4,6 +4,6 @@ use strict;
 use warnings;
 
 BEGIN {
-	use_ok( 'GD::Image::Scale2x' );
+    use_ok( 'GD::Image::Scale2x' );
 }
 

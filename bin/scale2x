@@ -14,8 +14,8 @@ This utility allows you to scale an image using the Scale2x algorithm. It takes
 in an image of any format that GD understands and outputs a png. You can
 specify an integer value by which your image should be scaled (default: 2). Example:
 
-	# scale4x
-	% scale2x -x 4 file.png > file4x.png
+    # scale4x
+    % scale2x -x 4 file.png > file4x.png
 
 =cut
 
