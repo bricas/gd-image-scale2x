@@ -36,7 +36,7 @@ some example results by looking through the test directory.
 use strict;
 use warnings;
 
-our $VERSION = '0.04';
+our $VERSION = '0.05';
 
 =head1 METHODS
 
@@ -94,26 +94,6 @@ use strict;
 use warnings;
 
 use Algorithm::Scale2x ();
-
-my $result = {
-    2 => [
-        { x => 0, y => 0 },
-        { x => 1, y => 0 },
-        { x => 0, y => 1 },
-        { x => 1, y => 1 }
-    ],
-    3 => [
-        { x => 0, y => 0 },
-        { x => 1, y => 0 },
-        { x => 2, y => 0 },
-        { x => 0, y => 1 },
-        { x => 1, y => 1 },
-        { x => 2, y => 1 },
-        { x => 0, y => 2 },
-        { x => 1, y => 2 },
-        { x => 2, y => 2 }
-    ]
-};
 
 sub scale2x {
     my $self = shift;
@@ -182,12 +162,15 @@ sub _scale {
             my $scaledx = $x * $scale;
             my $scaledy = $y * $scale;
 
-            for( 0..$#E ) {
-                unless( $palette[ $E[ $_ ] ] ) {
-                    $palette[ $E[ $_ ] ] = $image->colorAllocate( $self->rgb( $E[ $_ ] ) );
-                }
+            for my $y ( 0..$scale - 1 ) {
+                for $x ( 0..$scale - 1 ) {
+                    my $E = shift @E;
+                    unless( $palette[ $E ] ) {
+                        $palette[ $E ] = $image->colorAllocate( $self->rgb( $E ) );
+                    }
 
-                $image->setPixel( $scaledx + $result->{ $scale }->[ $_ ]->{ x }, $scaledy + $result->{ $scale }->[ $_ ]->{ y }, $palette[ $E[ $_ ] ] );
+                    $image->setPixel( $scaledx + $x, $scaledy + $y, $palette[ $E ] );
+                }
             }
         }
     }

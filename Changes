@@ -1,5 +1,8 @@
 Revision history for Perl extension GD::Image::Scale2x
 
+0.05  Mon May 14 2007
+    - clean up setpixel() loop
+
 0.04  Mon May 14 2007
     - extract out scale2s algorithm
 
