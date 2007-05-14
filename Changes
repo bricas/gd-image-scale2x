@@ -1,5 +1,8 @@
 Revision history for Perl extension GD::Image::Scale2x
 
+0.04  Mon May 14 2007
+    - extract out scale2s algorithm
+
 0.03  Mon Feb 26 2007
     - repackaged -- no functional changes
 

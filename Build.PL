@@ -10,7 +10,8 @@ my $build = Module::Build->new(
     create_makefile_pl => 'traditional',
     script_files       => [ qw( bin/scale2x ) ],
     requires           => {
-        'GD' => 0
+        'GD'                 => 0,
+        'Algorithm::Scale2x' => 0
     },
     build_requires     => {
         'Test::More'  => 0
