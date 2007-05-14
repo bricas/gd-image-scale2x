@@ -63,6 +63,8 @@ Same as scale2x done twice over.
 
 =over 4 
 
+=item * Algorithm::Scale2x
+
 =item * GD
 
 =item * http://scale2x.sourceforge.net/
