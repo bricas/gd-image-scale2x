@@ -1,5 +1,8 @@
 Revision history for Perl extension GD::Image::Scale2x
 
+0.06  Tue Jun 17 2008
+    - repackaged
+
 0.05  Mon May 14 2007
     - clean up setpixel() loop
 
