@@ -1,4 +1,4 @@
-use inc::Module::Install 0.75;
+use inc::Module::Install 0.91;
 
 if ( -e 'MANIFEST.SKIP' ) {
     system( 'pod2text lib/GD/Image/Scale2x.pm > README' );
@@ -16,5 +16,6 @@ test_requires 'Test::More';
 
 install_script 'bin/scale2x';
 
-auto_install;
+repository "http://github.com/bricas/gd-image-scale2x/tree/master";
+
 WriteAll;
