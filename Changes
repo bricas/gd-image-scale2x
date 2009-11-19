@@ -1,6 +1,8 @@
 Revision history for Perl extension GD::Image::Scale2x
 
 0.07  Wed Nov 18 2009
+    - fix "unreferenced scalar" bug (RT #39971)
+    - tidy up scale tests
     - repackaged with a new version of Module::Install
 
 0.06  Tue Jun 17 2008

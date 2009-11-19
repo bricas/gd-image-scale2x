@@ -125,10 +125,13 @@ sub _scale {
     }
 
     my $image   = GD::Image->new( $source_w * $scale, $source_h * $scale );
+    my $code    = Algorithm::Scale2x->can( "scale${scale}x" );
+
     my $bound_x = $source_w - 1;
     my $bound_y = $source_h - 1;
 
     my @palette;
+
     for my $y ( $source_y..$bound_y ) {
         for my $x ( $source_x..$bound_x ) {
             my $x_plus  = ( $x + 1 > $bound_x  ? $x : $x + 1 );
@@ -152,14 +155,13 @@ sub _scale {
                 $self->getPixel( $x_plus, $y_plus )
             );
 
-            my $code = Algorithm::Scale2x->can( "scale${scale}x" );
             my @E = $code->( @pixels );
 
             my $scaledx = $x * $scale;
             my $scaledy = $y * $scale;
 
             for my $y ( 0..$scale - 1 ) {
-                for $x ( 0..$scale - 1 ) {
+                for my $x ( 0..$scale - 1 ) {
                     my $E = shift @E;
                     unless( $palette[ $E ] ) {
                         $palette[ $E ] = $image->colorAllocate( $self->rgb( $E ) );
